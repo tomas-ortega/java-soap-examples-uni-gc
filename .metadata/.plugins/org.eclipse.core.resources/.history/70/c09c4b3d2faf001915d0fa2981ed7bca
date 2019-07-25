@@ -1,0 +1,9 @@
+package com.uni.gc.client.axis;
+
+import org.apache.axis2.AxisFault;
+
+public class MainAxis2 {
+	public static void main(String[] args) throws AxisFault {
+		StudentSoapServiceServiceStub axisStub = new StudentSoapServiceServiceStub();
+	}
+}

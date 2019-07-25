@@ -1,0 +1,33 @@
+package com.java.tutorial;
+
+public class App 
+{
+    public static void main(String[] args)
+    {
+       int hello;
+       Integer myFirstNumber;
+       String name;
+       
+       hello = 3;
+       myFirstNumber = 4;
+       name = "Bareto Guachinche!";
+       
+       if (hello == 3) {
+    	   System.out.println("hello == 3!");
+       }
+       
+       if (myFirstNumber.equals(new Integer(4))) {
+    	   System.out.println("myFirstNumber == 4!");
+       }
+       
+       if (name == "Bareto Guachinche!") {
+    	   System.out.println("Mínimo 2 cervezas!");
+       }
+       
+       App.learnArrays();
+    }
+    
+    public void learnArrays() {
+    	
+    }
+}

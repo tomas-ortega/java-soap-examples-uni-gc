@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+    		elementFormDefault="qualified"
+		    attributeFormDefault="unqualified"
+		    version="1.0"
+		    targetNamespace="http://gc.uni.com/">    		
+  
+<xs:element name="studentDTO">
+	<xs:complexType>
+	        <xs:all>
+	            <xs:element name="id" type="xs:int" minOccurs='0' />
+	            <xs:element name="name" type="xs:string" minOccurs='0' />
+	        </xs:all>
+	</xs:complexType>
+</xs:element>
+</xs:schema>
+
+<!--
+elementFormDefault="qualified"
+		    attributeFormDefault="unqualified"
+		    version="1.0" 
+xmlns:tns="urn:ajga.address:1.0"-->
+			<!-- targetNamespace="urn:ajga.address:1.0"-->
+			
+			
+			<!-- targetNamespace="http://gc.uni.com/"
+    		xmlns:tns="http://gc.uni.com/"
+    		elementFormDefault="qualified"
+		    attributeFormDefault="unqualified"
+		    version="1.0"-->

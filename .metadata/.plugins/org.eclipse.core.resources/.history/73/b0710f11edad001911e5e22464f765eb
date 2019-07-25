@@ -1,0 +1,5 @@
+package com.uni.gc;
+
+public class StudentSoapService implements IStudentSoap{
+
+}

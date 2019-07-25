@@ -1,0 +1,15 @@
+package com.uni.gc;
+
+import javax.ejb.Stateless;
+import javax.ws.rs.Path;
+
+@Stateless(name = "StudentRestService")
+@Path("/")
+public class StudentRestService implements IStudent {
+
+	@Override
+	public StudentDTO searchStudentById(Integer studentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

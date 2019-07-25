@@ -1,0 +1,12 @@
+package com.uni.gc;
+
+@WebService
+public class StudentSoapService implements IStudentSoapLocal, IStudentSoapRemote {
+
+	@Override
+	public StudentDTO searchStudentById(Integer studentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

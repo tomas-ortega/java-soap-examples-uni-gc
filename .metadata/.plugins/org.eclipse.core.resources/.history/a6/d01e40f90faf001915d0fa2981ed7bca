@@ -1,0 +1,71 @@
+package com.uni.gc.client;
+
+import java.io.File;
+
+import javax.xml.XMLConstants;
+import javax.xml.bind.JAXBContext;
+import javax.xml.bind.JAXBElement;
+import javax.xml.bind.util.JAXBSource;
+import javax.xml.namespace.QName;
+import javax.xml.validation.Schema;
+import javax.xml.validation.SchemaFactory;
+import javax.xml.validation.Validator;
+
+import org.xml.sax.SAXException;
+
+public class Main {
+	public static void main(String[] args) {
+		com.uni.gc.client.StudentDTO studentFound = null;
+		//StudentSoapServiceService proxyService = null;
+		//StudentSoapService soapServiceInterface = null;
+		
+		//proxyService = new StudentSoapServiceService();
+		
+		//soapServiceInterface = proxyService.getStudentSoapServicePort();
+		
+		//studentFound = soapServiceInterface.searchStudentById(4);
+		
+		studentFound = new com.uni.gc.client.StudentDTO();
+		studentFound.setId(4);
+		studentFound.setName("Pako");
+		
+		if (studentFound != null) {
+			studentDataValidator(studentFound);
+		
+			System.out.println(studentFound.getId() + " - " + studentFound.getName());
+		} else {
+			System.out.println("STUDENT NULL!!!");
+		}
+		
+	}
+	
+	public static void studentDataValidator(StudentDTO studentToCheck) {
+		try {
+			
+			/** Load Schema Validator XSD
+			 **/
+			SchemaFactory schemaFactory = SchemaFactory.newInstance(XMLConstants.W3C_XML_SCHEMA_NS_URI);
+			Schema xsdSchema = 
+					schemaFactory.newSchema(new File("/home/patternsdesign/eclipse-workspace/unigest-parent/unigest-services-soap/src/main/java/com/uni/gc/client/student_validation.xsd"));
+			
+			/** Create JAXB Context to validate student instance
+			 **/
+			JAXBContext jaxbContext = JAXBContext.newInstance(StudentDTO.class);
+			JAXBElement<com.uni.gc.client.StudentDTO> jaxbElementA = new JAXBElement(new QName("http://gc.uni.com/","StudentDTO"), com.uni.gc.client.StudentDTO.class, studentToCheck);
+			JAXBSource jaxbSourceStudent = new JAXBSource(jaxbContext, jaxbElementA);
+			
+			/** Validator process
+			 **/
+			Validator studentValidator = xsdSchema.newValidator();
+			
+			try {
+				studentValidator.validate(jaxbSourceStudent);
+			} catch(SAXException ex) {
+				ex.printStackTrace();
+			}
+			
+		} catch(Exception ex) {
+			ex.printStackTrace();
+		}
+	}
+}

@@ -1,0 +1,63 @@
+
+
+<xs:schema attributeFormDefault="unqualified" elementFormDefault="qualified" targetNamespace="http://www.w3.org/2001/XMLSchema" xmlns:xs="http://www.w3.org/2001/XMLSchema">
+  <xs:element name="schema">
+    <xs:complexType>
+      <xs:sequence>
+        <xs:element name="element" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:simpleContent>
+              <xs:extension base="xs:string">
+                <xs:attribute type="xs:string" name="name" use="optional"/>
+                <xs:attribute type="xs:QName" name="type" use="optional"/>
+              </xs:extension>
+            </xs:simpleContent>
+          </xs:complexType>
+        </xs:element>
+        <xs:element name="complexType" maxOccurs="unbounded" minOccurs="0">
+          <xs:complexType>
+            <xs:sequence>
+              <xs:element name="sequence">
+                <xs:complexType>
+                  <xs:sequence>
+                    <xs:element name="element" maxOccurs="unbounded" minOccurs="0">
+                      <xs:complexType>
+                        <xs:simpleContent>
+                          <xs:extension base="xs:string">
+                            <xs:attribute type="xs:byte" name="minOccurs" use="optional"/>
+                            <xs:attribute type="xs:string" name="name" use="optional"/>
+                            <xs:attribute type="xs:QName" name="type" use="optional"/>
+                          </xs:extension>
+                        </xs:simpleContent>
+                      </xs:complexType>
+                    </xs:element>
+                  </xs:sequence>
+                </xs:complexType>
+              </xs:element>
+            </xs:sequence>
+            <xs:attribute type="xs:string" name="name" use="optional"/>
+          </xs:complexType>
+        </xs:element>
+      </xs:sequence>
+      <xs:attribute type="xs:string" name="elementFormDefault"/>
+      <xs:attribute type="xs:anyURI" name="targetNamespace"/>
+      <xs:attribute type="xs:float" name="version"/>
+    </xs:complexType>
+  </xs:element>
+</xs:schema>
+
+
+
+<!--
+elementFormDefault="qualified"
+		    attributeFormDefault="unqualified"
+		    version="1.0" 
+xmlns:tns="urn:ajga.address:1.0"-->
+			<!-- targetNamespace="urn:ajga.address:1.0"-->
+			
+			
+			<!-- targetNamespace="http://gc.uni.com/"
+    		xmlns:tns="http://gc.uni.com/"
+    		elementFormDefault="qualified"
+		    attributeFormDefault="unqualified"
+		    version="1.0"-->

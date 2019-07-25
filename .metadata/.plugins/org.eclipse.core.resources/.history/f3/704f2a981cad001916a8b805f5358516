@@ -1,0 +1,40 @@
+package com.java.tutorial;
+
+import java.util.Comparator;
+
+public class Person implements Comparator<Person>, Comparable<Person> {
+	private Integer id;
+	protected String name;
+	public String dni;
+	
+	public Person() {
+		this.id = null;
+	}
+	
+	public Person(Integer id, String name, String dni) {
+		this.id = id;
+		this.name = name;
+		this.dni = dni;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	protected class Driver {
+		
+	}
+	
+	@Override
+	public int compareTo(Person person) {
+		//return (this.dni).compareTo(person.dni);
+		return 1;		
+	}
+
+	@Override
+	public int compare(Person person1, Person person2) {
+		return person1.dni.compareTo(person2.dni);
+	}
+}
+
+

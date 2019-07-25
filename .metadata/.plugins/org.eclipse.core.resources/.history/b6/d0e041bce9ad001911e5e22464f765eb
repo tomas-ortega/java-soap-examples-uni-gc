@@ -1,0 +1,6 @@
+package com.uni.gc;
+
+@Local
+public interface IStudentSoapLocal extends IStudent {
+
+}

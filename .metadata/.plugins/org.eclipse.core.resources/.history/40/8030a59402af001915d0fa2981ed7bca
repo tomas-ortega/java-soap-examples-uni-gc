@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="urn:ajga.address:1.0"
+			targetNamespace="urn:ajga.address:1.0"
+			elementFormDefault="qualified"
+		    attributeFormDefault="unqualified"
+		    version="1.0">
+
+  <xs:element name="studentNameType" type="tns:studentNameType">			
+  <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Pako|Juanito"/>
+        </xs:restriction>
+    </xs:simpleType>
+   </xs:element> 
+  
+<xs:element name="StudentDTO">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="id" type="xs:string" minOccurs='1' maxOccurs='1' />
+            <xs:element name="name" type="tns:studentNameType" minOccurs='1' maxOccurs='1'/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
+

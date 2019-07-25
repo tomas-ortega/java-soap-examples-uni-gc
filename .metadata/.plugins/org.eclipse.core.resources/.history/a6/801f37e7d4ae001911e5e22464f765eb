@@ -1,0 +1,20 @@
+package com.uni.gc;
+
+import javax.annotation.security.PermitAll;
+import javax.ejb.Stateless;
+import javax.ws.rs.GET;
+import javax.ws.rs.Path;
+
+@Stateless(name = "StudentRestService")
+@Path("/")
+public class StudentRestService implements IStudent {
+
+	@Override
+	@GET
+	@PermitAll
+	@Path("/client")
+	public StudentDTO searchStudentById(Integer studentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+}

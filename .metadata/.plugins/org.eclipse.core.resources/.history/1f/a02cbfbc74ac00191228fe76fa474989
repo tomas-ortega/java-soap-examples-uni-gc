@@ -1,0 +1,18 @@
+package com.java.tutorial;
+
+public class CabifyDriver extends Person 
+						implements IPerson{
+
+	@Override
+	public String sayHello() {
+		return "Buenos días, le cojo su maleta!";
+	}
+	
+	public void main(String[] args) {
+		CabifyDriver driver = new CabifyDriver();
+		
+		//console.log()
+		System.out.println(driver.sayHello());
+	}
+
+}

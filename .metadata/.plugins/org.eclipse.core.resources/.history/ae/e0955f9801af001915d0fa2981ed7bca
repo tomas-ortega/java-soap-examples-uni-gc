@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			xmlns:tns="http://gc.uni.com/"
+			xmlns:mst="http://gc.uni.com/StudentNameType"
+			xmlns:st="http://gc.uni.com/StudentDTO"
+			targetNamespace="http://gc.uni.com/">
+
+  <xs:element name="StudentNameType">			
+  <xs:simpleType>
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Pako|Juanito"/>
+        </xs:restriction>
+    </xs:simpleType>
+   </xs:element> 
+  
+<xs:element name="StudentDTO" type="tns:studentDTO">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="id" type="xs:string" minOccurs='1' maxOccurs='1' />
+            <xs:element name="name" type="StudentNameType" minOccurs='1' maxOccurs='1'/>
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
+

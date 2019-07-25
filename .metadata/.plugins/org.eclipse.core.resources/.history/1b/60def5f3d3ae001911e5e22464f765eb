@@ -1,0 +1,13 @@
+package com.uni.gc;
+
+import javax.ejb.Stateless;
+import javax.ws.rs.Path;
+
+@Stateless(name = "StudentRestService")
+@Path("/")
+public class StudentRestService {
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+    }
+}

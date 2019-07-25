@@ -1,0 +1,12 @@
+package com.uni.gc;
+
+
+public class StudentDTO {
+	private Integer id;
+	private String name;
+	
+	public StudentDTO() {
+		this.id = null;
+		this.name = null;
+	}
+}

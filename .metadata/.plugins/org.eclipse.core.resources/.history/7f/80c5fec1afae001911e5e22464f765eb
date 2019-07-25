@@ -1,0 +1,11 @@
+package com.uni.gc.client;
+
+public class Main {
+	public static void main(String[] args) {
+		StudentDTO studentFound = null;
+		StudentSoapServiceService proxyService = null;
+		
+		proxyService = new StudentSoapServiceService();
+		
+	}
+}

@@ -1,0 +1,14 @@
+package com.java.tutorial;
+
+public class Person {
+	private Integer id;
+	protected String name;
+	public String dni;
+	
+	public Person() {
+		this.id = null;
+	}
+	
+}
+
+

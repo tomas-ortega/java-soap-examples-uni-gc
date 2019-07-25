@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<xs:schema xmlns:xs="http://www.w3.org/2001/XMLSchema"
+			targetNamespace="http://gc.uni.com/"
+    		xmlns:tns="http://gc.uni.com/clientNameType"
+    		xmlns:tns="http://gc.uni.com/clientIdType"
+    		elementFormDefault="qualified"
+		    attributeFormDefault="unqualified"
+		    version="1.0">
+    		
+ <!-- <xs:element name="clientNameType"> -->			
+  <xs:simpleType name="clientNameType">
+        <xs:restriction base="xs:string">
+            <xs:pattern value="Pako|Juanito"/>
+        </xs:restriction>
+    </xs:simpleType>
+    
+    <xs:simpleType name="clientIdType">
+    	<xs:restriction base="xs:int">
+    	</xs:restriction>
+    </xs:simpleType>
+<!-- </xs:element> --> 
+  
+<xs:element name="StudentDTO">
+    <xs:complexType>
+        <xs:sequence>
+            <xs:element name="id" type="tns:clientIdType" minOccurs='1' maxOccurs='1' />
+            <xs:element name="name" type="tns:clientNameType" minOccurs='1' maxOccurs='1' />
+        </xs:sequence>
+    </xs:complexType>
+</xs:element>
+</xs:schema>
+
+<!--
+elementFormDefault="qualified"
+		    attributeFormDefault="unqualified"
+		    version="1.0" 
+xmlns:tns="urn:ajga.address:1.0"-->
+			<!-- targetNamespace="urn:ajga.address:1.0"-->

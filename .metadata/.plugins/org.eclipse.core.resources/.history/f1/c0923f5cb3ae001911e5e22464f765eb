@@ -1,0 +1,18 @@
+package com.uni.gc.client;
+
+public class Main {
+	public static void main(String[] args) {
+		StudentDTO studentFound = null;
+		StudentSoapServiceService proxyService = null;
+		StudentSoapService soapServiceInterface = null;
+		
+		proxyService = new StudentSoapServiceService();
+		
+		soapServiceInterface = proxyService.getStudentSoapServicePort();
+		
+		studentFound = soapServiceInterface.searchStudentById(4);
+		
+		System.out.println(studentFound);
+		
+	}
+}

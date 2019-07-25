@@ -1,0 +1,87 @@
+package com.java.tutorial;
+
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Vector;
+
+public class App 
+{
+    public static void main(String[] args)
+    {
+       int hello;
+       Integer myFirstNumber;
+       String name;
+       
+       hello = 3;
+       myFirstNumber = 4;
+       name = "Bareto Guachinche!";
+       
+       if (hello == 3) {
+    	   System.out.println("hello == 3!");
+       }
+       
+       if (myFirstNumber.equals(new Integer(4))) {
+    	   System.out.println("myFirstNumber == 4!");
+       }
+       
+       if (name == "Bareto Guachinche!") {
+    	   System.out.println("Mínimo 2 cervezas!");
+       }
+       
+       App.learnArrayList();
+    }
+    
+    public static void basicArray() {
+    	String myNumberList[];
+    	myNumberList = new String[10];
+    	
+    	myNumberList[2] = "A";
+    	
+    	//myNumberList.length
+    }
+    
+    public static void vectorArray() {
+    	Vector myVectorNumber;
+    	
+    	myVectorNumber = new Vector();
+    	myVectorNumber.add("A");
+    	myVectorNumber.add(3);
+    	myVectorNumber.add(new Integer(4));
+    }
+    
+    public static void learnArrayList() {
+    	List<Integer> mySimpleList;
+    	
+    	mySimpleList = new ArrayList<Integer>();
+    	
+    	mySimpleList.add(new Integer(3));
+    	mySimpleList.add(new Integer(5));
+    	
+    	//Recorrer una lista
+    	//1º Mediante un FOR
+    	for (int i = 0; i < mySimpleList.size(); i++) {
+			mySimpleList.get(i);
+		}
+    	
+    	//2º Mediante un ForEach
+    	System.out.println("Iteration ForEach");
+    	System.out.println("=================");
+    	for (Integer currentNumber : mySimpleList) {
+			System.out.println("NUMBER: " + currentNumber);
+		}
+    	
+    	//3º Mediante Lambda Expression
+    	mySimpleList.stream().forEach(singleNumber -> {
+    			System.out.println("Number: " + singleNumber);
+    			singleNumber++;
+    	});
+    	
+    	//4º Iterator
+    	Iterator<Integer> myIterator = mySimpleList.iterator();
+    	
+    	while(myIterator.hasNext()) {
+    		System.out.println("Number: " + myIterator.next());
+    	}
+    }
+}

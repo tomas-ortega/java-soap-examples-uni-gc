@@ -1,0 +1,11 @@
+package com.uni.gc;
+
+import javax.ejb.Stateless;
+import javax.ws.rs.Path;
+
+@Stateless(name = "StudentRestService")
+@Path("/")
+public class StudentRestService implements IStudent {
+    
+	
+}

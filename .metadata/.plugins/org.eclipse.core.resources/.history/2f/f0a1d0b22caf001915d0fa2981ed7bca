@@ -1,0 +1,9 @@
+package com.uni.gc.client;
+
+import com.uni.gc.axis2.client.*;
+
+public class MainAxis2 {
+	public static void main(String[] args) {
+		
+	}
+}

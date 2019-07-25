@@ -1,0 +1,8 @@
+INDEX VERSION 1.4+/home/patternsdesign/eclipse-workspace/.metadata/.plugins/org.eclipse.wst.jsdt.core/indexes
+2799837829.index
+2599251185.index
+1277231215.index
+2919513925.index
+1689676092.index
+868846192.index
+3849222694.index

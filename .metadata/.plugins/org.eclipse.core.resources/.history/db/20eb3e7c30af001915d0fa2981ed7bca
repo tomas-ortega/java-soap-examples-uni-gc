@@ -1,0 +1,18 @@
+package com.uni.gc.client.axis;
+
+import org.apache.axis2.client.ServiceClient;
+
+import com.uni.gc.client.axis.StudentSoapServiceServiceStub.SearchStudentByIdE;
+import com.uni.gc.client.axis.StudentSoapServiceServiceStub.SearchStudentByIdResponse;
+import com.uni.gc.client.axis.StudentSoapServiceServiceStub.SearchStudentByIdResponseE;
+
+public class MainAxis2 {
+	public static void main(String[] args) throws Exception {
+		StudentSoapServiceServiceStub axisClientCall = new StudentSoapServiceServiceStub();
+		SearchStudentByIdE parameter = new SearchStudentByIdE();
+		parameter.localSearchStudentById.setStudentId(4);
+		
+		
+		SearchStudentByIdResponseE clientResponse = axisClientCall.searchStudentById(parameter);
+	}
+}

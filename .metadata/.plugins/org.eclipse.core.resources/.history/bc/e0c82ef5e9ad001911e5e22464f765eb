@@ -1,0 +1,6 @@
+package com.uni.gc;
+
+@Remote
+public interface IStudentSoapRemote extends IStudent {
+
+}

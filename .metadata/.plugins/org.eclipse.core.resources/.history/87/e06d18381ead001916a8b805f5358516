@@ -1,0 +1,70 @@
+package com.java.tutorial;
+
+import java.util.Comparator;
+
+public class Person implements Comparator<Person>, Comparable<Person> {
+	public Integer id;
+	protected String name;
+	public String dni;
+	
+	public Person() {
+		this.id = null;
+	}
+	
+	public Person(Integer id, String name, String dni) {
+		this.id = id;
+		this.name = name;
+		this.dni = dni;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	protected class Driver {
+		
+	}
+	
+	@Override
+	public int compareTo(Person person) {
+		//return (this.dni).compareTo(person.dni);
+		return 1;		
+	}
+
+	@Override
+	public int compare(Person person1, Person person2) {
+		//if (person1.i)
+		return 0;
+		//return person1.dni.compareTo(person2.dni);
+	}
+	
+	@Override
+    public boolean equals(Object singlePerson) {
+		
+		if (singlePerson == null) {
+			return false;
+		}
+  
+        // If the object is compared with itself then return true   
+        if (singlePerson == this) { 
+            return true; 
+        } 
+  
+        /* Check if o is an instance of Complex or not 
+          "null instanceof [type]" also returns false */
+        /*if (!(o instanceof Complex)) { 
+            return false; 
+        } */
+          
+        // typecast o to Complex so that we can compare data members  
+        //Complex c = (Complex) o; 
+          
+        // Compare the data members and return accordingly  
+        /*return Double.compare(re, c.re) == 0
+                && Double.compare(im, c.im) == 0; */
+        
+        return Integer.compare(this.id, singlePerson.) == 0;
+    } 
+}
+
+

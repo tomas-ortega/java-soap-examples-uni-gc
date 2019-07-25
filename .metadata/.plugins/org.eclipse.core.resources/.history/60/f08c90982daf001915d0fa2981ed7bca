@@ -1,0 +1,9 @@
+package com.uni.gc.client;
+
+import com.uni.gc.client.axis.StudentSoapServiceServiceCallbackHandler;
+
+public class MainAxis2 {
+	public static void main(String[] args) {
+		StudentSoapServiceServiceCallbackHandler clientWebService = new StudentSoapServiceServiceCallbackHandler();
+	}
+}

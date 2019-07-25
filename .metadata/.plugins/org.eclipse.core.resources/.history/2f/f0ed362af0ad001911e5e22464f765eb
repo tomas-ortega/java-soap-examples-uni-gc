@@ -1,0 +1,16 @@
+package com.uni.gc;
+
+import javax.ejb.Stateless;
+import javax.jws.WebService;
+
+@Stateless
+@WebService
+public class StudentSoapService implements IStudentSoapLocal, IStudentSoapRemote {
+
+	@Override
+	public StudentDTO searchStudentById(Integer studentId) {
+		// TODO Auto-generated method stub
+		return null;
+	}
+
+}

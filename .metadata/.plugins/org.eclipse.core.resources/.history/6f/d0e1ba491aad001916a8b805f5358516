@@ -1,0 +1,36 @@
+package com.java.tutorial;
+
+import java.util.Comparator;
+
+public class Person implements Comparator<Person> {
+	private Integer id;
+	protected String name;
+	public String dni;
+	
+	public Person() {
+		this.id = null;
+	}
+	
+	public Person(Integer id, String name, String dni) {
+		this.id = id;
+		this.name = name;
+		this.dni = dni;
+	}
+	
+	public void setId(Integer id) {
+		this.id = id;
+	}
+	
+	protected class Driver {
+		
+	}
+
+	@Override
+	public int compare(Person o1, Person o2) {
+		// TODO Auto-generated method stub
+		return 0;
+	}
+	
+}
+
+

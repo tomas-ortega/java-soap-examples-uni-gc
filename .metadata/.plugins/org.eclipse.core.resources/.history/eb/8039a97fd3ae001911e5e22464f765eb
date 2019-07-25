@@ -1,0 +1,11 @@
+package com.uni.gc;
+
+import javax.ejb.Stateless;
+
+@Stateless(name = "StudentRestService")
+public class StudentRestService {
+    public static void main( String[] args )
+    {
+        System.out.println( "Hello World!" );
+    }
+}

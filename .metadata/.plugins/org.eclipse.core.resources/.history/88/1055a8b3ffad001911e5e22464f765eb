@@ -1,0 +1,39 @@
+package com.uni.gc;
+
+import java.io.Serializable;
+
+import javax.xml.bind.annotation.XmlElement;
+import javax.xml.bind.annotation.XmlRootElement;
+
+@XmlRootElement
+public class StudentDTO implements Serializable {
+
+	private static final long serialVersionUID = 9045436552398166916L;
+	
+	@XmlElement
+	private Integer id;
+	
+	@XmlElement
+	private String name;
+	
+	public StudentDTO() {
+		this.id = null;
+		this.name = null;
+	}
+	
+	public void setId(Integer newId) {
+		this.id = newId;
+	}
+	
+	public Integer getId() {
+		return this.id;
+	}
+	
+	public void setName(String newName) {
+		this.name = newName;
+	}
+	
+	public String getName() {
+		return this.name;
+	}
+}
