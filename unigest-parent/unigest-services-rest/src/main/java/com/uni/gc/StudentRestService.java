@@ -2,8 +2,11 @@ package com.uni.gc;
 
 import javax.ws.rs.core.MediaType;
 import javax.ws.rs.core.Response;
-import javax.annotation.security.PermitAll;
+
+import com.uni.gc.ejb.IStudentLogic;
+import javax.annotation.security.DenyAll;
 import javax.ejb.Stateless;
+import javax.inject.Inject;
 import javax.ws.rs.GET;
 import javax.ws.rs.Path;
 import javax.ws.rs.Produces;
@@ -12,25 +15,36 @@ import javax.ws.rs.QueryParam;
 @Stateless(name = "StudentRestService")
 @Path("/")
 public class StudentRestService implements IStudentRest {
+	
+	private IStudentLogic studentLogic;
+	
+	@Inject
+	public void setStudentLogic(IStudentLogic studentLogic) {
+		this.studentLogic = studentLogic;
+	}
+	
+	@GET
+	@DenyAll
+	@Path("/hello")
+	@Produces(MediaType.APPLICATION_JSON)
+	public Response sayHello() {
+		Response httpResponse = null;
+		
+		return httpResponse;
+	}
+	
 
 	@Override
 	@GET
-	@PermitAll
 	@Path("/client")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response searchStudentById(@QueryParam("id") Integer studentId) {
 		StudentDTO studentFound = null;
 		Response httpResponse = null;
 		
+	
 		try {
-		
-			//Reglas de negocio -> Business Module
-			if (studentId.equals(4)) {
-				studentFound = new StudentDTO();
-				
-				studentFound.setId(4);
-				studentFound.setName("Pakito");
-			}
+			studentFound = this.studentLogic.searchStudentById(studentId);
 			
 			if (studentFound == null) {
 				//404

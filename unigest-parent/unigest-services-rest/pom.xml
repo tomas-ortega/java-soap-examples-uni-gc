@@ -41,6 +41,10 @@
     	<groupId>com.uni.gc</groupId>
     	<artifactId>unigest-api</artifactId>
     </dependency>
+    <dependency>
+    	<groupId>com.uni.gc</groupId>
+    	<artifactId>unigest-ejb</artifactId>
+    </dependency>
   </dependencies>
 
   <build>

@@ -17,12 +17,16 @@
 
 	<dependencyManagement>
 		<dependencies>
+		
+			<!-- Test dependencies -->
 		    <dependency>
 		      <groupId>junit</groupId>
 		      <artifactId>junit</artifactId>
 		      <version>4.11</version>
 		      <scope>test</scope>
 		    </dependency>
+		    
+		    <!-- J2EE dependencies -->
 		    <dependency>
 		    	<groupId>javax</groupId>
 		    	<artifactId>javaee-web-api</artifactId>
@@ -35,6 +39,8 @@
 		    	<version>7.0</version>
 		    	<scope>provided</scope>
 		    </dependency>
+		    
+		    <!-- App dependencies -->
 		    <dependency>
 		    	<groupId>com.uni.gc</groupId>
 		    	<artifactId>unigest-domain</artifactId>
@@ -45,6 +51,18 @@
 		    	<artifactId>unigest-api</artifactId>
 		    	<version>1.0-SNAPSHOT</version>
 		    </dependency>
+		    <dependency>
+		    	<groupId>com.uni.gc</groupId>
+		    	<artifactId>unigest-ejb</artifactId>
+		    	<version>1.0-SNAPSHOT</version>
+		    </dependency>
+		    
+		    <!-- JWT dependencies -->
+		    <dependency>
+			  <groupId>io.jsonwebtoken</groupId>
+			  <artifactId>jjwt</artifactId>
+			  <version>0.9.1</version>
+			</dependency>
 		    
 		    <!-- Rest Dependencies  -->
 		    <dependency>
@@ -113,7 +131,8 @@
 	<modules>
     	<module>unigest-domain</module>
   		<module>unigest-services-soap</module>
-		  <module>unigest-api</module>
-		  <module>unigest-services-rest</module>
+		<module>unigest-api</module>
+		<module>unigest-services-rest</module>
+    	<module>unigest-ejb</module>
   </modules>
 </project>

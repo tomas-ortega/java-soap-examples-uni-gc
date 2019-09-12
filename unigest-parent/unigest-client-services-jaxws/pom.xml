@@ -5,6 +5,7 @@
   <groupId>com.uni.gc</groupId>
   <artifactId>unigest-client-services-jaxws</artifactId>
   <version>1.0-SNAPSHOT</version>
+  <packaging>jar</packaging>
 
   <name>unigest-client-services-jaxws</name>
   
