@@ -8,11 +8,10 @@
   </parent>
 
   <groupId>com.uni.gc</groupId>
-  <artifactId>unigest-ejb</artifactId>
+  <artifactId>unigest-dao</artifactId>
   <version>1.0-SNAPSHOT</version>
-  <packaging>ejb</packaging>
 
-  <name>unigest-ejb</name>
+  <name>unigest-dao</name>
 
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
@@ -21,38 +20,23 @@
   </properties>
 
   <dependencies>
-  	<dependency>
-		<groupId>javax</groupId>
-		<artifactId>javaee-api</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>com.uni.gc</groupId>
-		<artifactId>unigest-api</artifactId>
-	</dependency>
-	<dependency>
-		<groupId>com.uni.gc</groupId>
-		<artifactId>unigest-dao</artifactId>
-	</dependency>
-	<dependency>
-        <groupId>io.jsonwebtoken</groupId>
-        <artifactId>jjwt</artifactId>
-    </dependency>
     <dependency>
       <groupId>junit</groupId>
       <artifactId>junit</artifactId>
+    </dependency>
+    <dependency>
+    	<groupId>javax</groupId>
+    	<artifactId>javaee-api</artifactId>
+    </dependency>
+    <dependency>
+        <groupId>com.uni.gc</groupId>
+        <artifactId>unigest-api</artifactId>
     </dependency>
   </dependencies>
 
   <build>
     <pluginManagement><!-- lock down plugins versions to avoid using Maven defaults (may be moved to parent pom) -->
       <plugins>
-       <plugin>
-            <groupId>org.apache.maven.plugins</groupId>
-            <artifactId>maven-ejb-plugin</artifactId>
-            <configuration>
-                <ejbVersion>3.1</ejbVersion>
-            </configuration>
-        </plugin>
         <!-- clean lifecycle, see https://maven.apache.org/ref/current/maven-core/lifecycles.html#clean_Lifecycle -->
         <plugin>
           <artifactId>maven-clean-plugin</artifactId>

@@ -5,6 +5,7 @@ import javax.ws.rs.core.Response;
 
 import com.uni.gc.ejb.IStudentLogic;
 import javax.annotation.security.DenyAll;
+import javax.annotation.security.PermitAll;
 import javax.ejb.Stateless;
 import javax.inject.Inject;
 import javax.ws.rs.GET;
@@ -36,6 +37,7 @@ public class StudentRestService implements IStudentRest {
 
 	@Override
 	@GET
+	@PermitAll
 	@Path("/client")
 	@Produces(MediaType.APPLICATION_JSON)
 	public Response searchStudentById(@QueryParam("id") Integer studentId) {

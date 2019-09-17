@@ -13,16 +13,24 @@ import org.jboss.resteasy.core.Headers;
 import org.jboss.resteasy.core.ResourceMethodInvoker;
 import org.jboss.resteasy.core.ServerResponse;
 
+import com.uni.gc.UserDTO;
 import com.uni.gc.ejb.ITokenLogic;
+import com.uni.gc.ejb.IUserLogic;
 
 @Provider
 public class SecurityInterceptorRequest implements javax.ws.rs.container.ContainerRequestFilter {
 	
 	private ITokenLogic iTokenLogic;
+	private IUserLogic userLogic;
 	
 	@Inject
 	public void setTokenLogin(ITokenLogic tokenLogic) {
 		this.iTokenLogic = tokenLogic;
+	}
+	
+	@Inject
+	public void setUserLogic(IUserLogic userLogic) {
+		this.userLogic = userLogic;
 	}
 
    
@@ -48,18 +56,28 @@ public class SecurityInterceptorRequest implements javax.ws.rs.container.Contain
 	}
 	
 	private void validateLogin(ContainerRequestContext requestContext) {
-		String userNameHeaderValue = requestContext.getHeaderString("username");
-		String passwordNameHeaderValue = requestContext.getHeaderString("password");
+		String userNameHeaderValue = null;
+		String passwordNameHeaderValue = null;
+		UserDTO userFound = null;
 		
-		if (userNameHeaderValue != null
-				&& passwordNameHeaderValue != null) {
-			if (!userNameHeaderValue.equals("Pakito") || !passwordNameHeaderValue.equals("57925234")) {
-				requestContext.abortWith(ACCESS_FORBIDDEN);
-		        return;
-			} else {
-				String generatedToken = this.iTokenLogic.generateToken();
-				requestContext.getHeaders().add("Bearer", generatedToken);
+		try {
+			userNameHeaderValue = requestContext.getHeaderString("username");
+			passwordNameHeaderValue = requestContext.getHeaderString("password");
+			
+			if (userNameHeaderValue != null
+					&& passwordNameHeaderValue != null) {
+				userFound = this.userLogic.searchUserLogin(userNameHeaderValue, passwordNameHeaderValue);
+				if (userFound == null) {
+					requestContext.abortWith(ACCESS_FORBIDDEN);
+			        return;
+				} else {
+					String generatedToken = this.iTokenLogic.generateToken();
+					requestContext.getHeaders().add("Bearer", generatedToken);
+				}
 			}
+		} catch(Exception ex) {
+			requestContext.abortWith(ACCESS_FORBIDDEN);
+	        return;
 		}
 	}
 	

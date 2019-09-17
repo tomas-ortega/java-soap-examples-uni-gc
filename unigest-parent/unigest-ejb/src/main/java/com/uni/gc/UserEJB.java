@@ -22,4 +22,24 @@ public class UserEJB implements IUserLogic {
 		
 		return userFound;
 	}
+	
+	@Override
+	public UserDTO searchUserLogin(String username, String email) throws Exception {
+		UserDTO userFound = null;
+		
+		try {
+			if (username.equals("Pakito") && email.equals("57925234")) {
+				userFound = new UserDTO();
+				
+				userFound.setId(3);
+				userFound.setName("Pakito");
+				userFound.setSurname("Chokolatero");
+				userFound.setEmail("pakito@pakito.com");
+			}
+			
+			return userFound;
+		} catch(Exception ex) {
+			throw ex;
+		}
+	}
 }

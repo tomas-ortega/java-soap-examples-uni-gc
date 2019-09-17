@@ -56,6 +56,11 @@
 		    	<artifactId>unigest-ejb</artifactId>
 		    	<version>1.0-SNAPSHOT</version>
 		    </dependency>
+		    <dependency>
+		    	<groupId>com.uni.gc</groupId>
+		    	<artifactId>unigest-dao</artifactId>
+		    	<version>1.0-SNAPSHOT</version>
+		    </dependency>
 		    
 		    <!-- JWT dependencies -->
 		    <dependency>
@@ -134,5 +139,6 @@
 		<module>unigest-api</module>
 		<module>unigest-services-rest</module>
     	<module>unigest-ejb</module>
+    	<module>unigest-dao</module>
   </modules>
 </project>
